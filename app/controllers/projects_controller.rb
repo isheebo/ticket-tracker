@@ -10,11 +10,11 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
-      # flash[:notice] = "Project has been successfully created"
-      redirect_to @project, notice: "Project has been created"
+      flash[:notice] = "Project has been created"
+      redirect_to @project
     else
-      # if the validations on the model fail, run the
-      # code which is here
+      flash.now[:alert] = "Project has not been created"
+      render "new"
     end
   end
 
