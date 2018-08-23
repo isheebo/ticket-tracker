@@ -9,5 +9,11 @@ RSpec.feature "Users can create Projects", type: :feature do
     click_button "Create Project"
 
     expect(page).to have_content("Project has been created")
+
+    project = Project.find_by(name: "Sublime Text 3")
+    expect(page.current_url).to eq project_url(project)
+    title = "Sublime Text 3 - Projects - TicketTracker"
+    expect(page).to have_title(title)
+
   end
 end
