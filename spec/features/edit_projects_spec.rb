@@ -10,7 +10,7 @@ RSpec.feature "Users can edit exisiting projects", type: :feature do
   end
 
   scenario "with valid attributes" do
-    fill_in "Name", with:  "Sublime Text 4 beta"
+    fill_in "Name", with: "Sublime Text 4 beta"
     click_button "Update Project"
 
     expect(page).to have_content("Project has been updated")
