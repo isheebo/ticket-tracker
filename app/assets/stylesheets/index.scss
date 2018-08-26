@@ -2,6 +2,10 @@
 @import "bootstrap";
 @import "font-awesome";
 
+body {
+  padding-top: 70px;
+}
+
 header {
   @extend .page-header;
   position: relative;
@@ -11,23 +15,9 @@ header {
     margin-top: 20px;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    max-width: 55%;
-  }
-
   ul.actions {
     @extend .list-unstyled;
     @extend .list-inline;
-    position: absolute;
-    bottom: -2px;
-    right: 2px;
-    max-width: 45%;
-    text-align: right;
   }
 }
 
@@ -76,4 +66,33 @@ a.delete {
 
 form {
   max-width: 500px;
+}
+
+// This media query here shows that for screens with width 500px and below,
+// paragaraphs should be displayed in red.
+@media (max-width: 500px) {
+  p {
+    color: red;
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      max-width: 55%;
+    }
+  }
+
+  ul.actions {
+    position: absolute;
+    bottom: -2px;
+    right: 2px;
+    max-width: 45%;
+    text-align: right;
+  }
 }
