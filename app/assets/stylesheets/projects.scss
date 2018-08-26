@@ -1,34 +1,12 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "bootstrap-sprockets";
-@import "bootstrap";
-@import "font-awesome";
 
-.page-header {
-  position: relative;
-  padding-bottom: 0px;
+// since these styles are specific to projects alone,
+// we put it into this file
 
-  &:first-child {
-    margin-top: 20px;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    max-width: 55%;
-  }
-
-  ul.actions {
-    @extend .list-unstyled;
-    @extend .list-inline;
-    position: absolute;
-    bottom: -2px;
-    right: 2px;
-    max-width: 45%;
-    text-align: right;
-  }
+#projects {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20px 0px 0px;
 }
