@@ -39,7 +39,7 @@
 <ul id="tickets">
   <% @project.tickets.each do |ticket|%>
     <li>
-      <%= link_to ticket.name, project_ticket_path([@project, ticket]) %>
+      <%= link_to ticket.name, [@project, ticket] %>
     </li>
   <% end %>
 </ul>
