@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "User can view tickets", type: :feature do
   before do
-    author =  FactoryBot.create(:user)
+    author = FactoryBot.create(:user)
 
     sublime_text = FactoryBot.create(:project, name: "Sublime Text 3")
     FactoryBot.create(:ticket,
