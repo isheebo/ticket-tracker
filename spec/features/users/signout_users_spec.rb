@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Logged in user can sign out", type: :feature do
-
-  let!(:user){ FactoryBot.create(:user)}
+  let!(:user) { FactoryBot.create(:user) }
 
   before do
     login_as(user)

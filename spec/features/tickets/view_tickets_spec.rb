@@ -2,9 +2,12 @@ require 'rails_helper'
 
 RSpec.feature "User can view tickets", type: :feature do
   before do
+    author =  FactoryBot.create(:user)
+
     sublime_text = FactoryBot.create(:project, name: "Sublime Text 3")
     FactoryBot.create(:ticket,
                       project: sublime_text,
+                      author: author,
                       name: "Implement the minimap feature",
                       description: "You may copy this from the VS Code")
 
@@ -14,6 +17,7 @@ RSpec.feature "User can view tickets", type: :feature do
 
     FactoryBot.create(:ticket,
                       project: lime_text,
+                      author: author,
                       name: "Implement backend in Go",
                       description: "Raise a PR for this")
     visit "/"

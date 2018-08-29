@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "Users can sign in", type: :feature do
-  let!(:user){FactoryBot.create(:user)}
+  let!(:user) { FactoryBot.create(:user) }
 
   scenario "with valid credentials" do
     visit "/"

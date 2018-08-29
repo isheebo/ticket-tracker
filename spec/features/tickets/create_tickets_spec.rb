@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.feature "User can create new Tickets", type: :feature do
+  let!(:user) { FactoryBot.create(:user) }
+
   before do
     project = FactoryBot.create(:project, name: 'Internet Explorer')
+
+    login_as(user)
 
     visit project_path(project)
     click_link "New Ticket"
@@ -14,6 +18,10 @@ RSpec.feature "User can create new Tickets", type: :feature do
 
     click_button "Create Ticket"
     expect(page).to have_content "Ticket has been created"
+
+    within("#ticket") do
+      expect(page).to have_content("Author: #{user.email}")
+    end
   end
 
   scenario "with invalid attributes" do
