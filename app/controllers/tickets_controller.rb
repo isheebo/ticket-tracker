@@ -46,10 +46,18 @@ class TicketsController < ApplicationController
 
   def set_project
     @project = Project.find(params[:project_id])
+
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Project doesn't exist"
+    redirect_to projects_path
   end
 
   def set_ticket
     @ticket = @project.tickets.find(params[:id])
+
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "Ticket doesn't exist"
+    redirect_to @project
   end
 
   def ticket_params
